@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "NoUpdPaymentBtn",
+  "version": "1.0",
+  "description": "Get rid of update payment buttons",
+  "content_scripts": [
+    {
+      "js": ["dist/index.js"],
+      "matches": ["https://hyperskill.org/*"]
+    }
+  ]
+}
