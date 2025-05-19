@@ -24,6 +24,7 @@ function initScript() {
     function removeUpdatePaymentButtons() {
         const buttons = document.getElementsByTagName("button");
         for (let button of buttons) {
+            console.log(button);
             if (button.classList.contains("!text-[#CE2416]")) {
                 console.log("Found update payment button, removing...");
                 const parentElement = button.parentElement;
@@ -32,6 +33,16 @@ function initScript() {
                     parentElement.remove();
                     observer.disconnect();
                 }
+            }
+            if (/Expand all/.test(button.innerText)) {
+                button.click();
+                observer.disconnect();
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                }, 1000);
             }
         }
     }
